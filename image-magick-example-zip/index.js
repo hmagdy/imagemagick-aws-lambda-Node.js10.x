@@ -26,7 +26,7 @@ lol = async function (event, context) {
     // var key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '));
 
     // Get the object from the event and show its content type
-    var bucket = '/image-magick-example';
+    var bucket = 'image-magick-example';
     var key = decodeURIComponent('0-original.jpg'.replace(/\+/g, ' '));
 
     var params = {
