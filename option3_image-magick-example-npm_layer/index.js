@@ -29,7 +29,7 @@ lol = async function (event, context) {
     // Get the object from the event and show its content type
     var bucket = 'mystaff-files';// event.Records[0].s3.bucket.name;
 
-    var key = decodeURIComponent('screenshot/VcKxVBrmYBMArp5C/XDZvDmjZnQE1rFYA/6C52F7C4-20A8-53D6-8147-C1888B7D0BAD/2019-11-05T17:28:33.000Z/1-original.jpg'.replace(/\+/g, ' '));
+    var key = decodeURIComponent('1-original.jpg'.replace(/\+/g, ' '));
 
 
 
