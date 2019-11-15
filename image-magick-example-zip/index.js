@@ -15,7 +15,7 @@ const DEBUG = false;
  */
 const RESIZE_WIDTH = 150;
 
-lol = async function (event, context) {
+exports.handler = async function (event, context) {
 
     if (DEBUG) {
         console.log('Received event:', JSON.stringify(event, null, 2));
@@ -36,7 +36,7 @@ lol = async function (event, context) {
     const image = await s3.getObject(params).promise();
     console.log(image);
     try {
-        let options = { width: RESIZE_WIDTH }
+        let options = {width: RESIZE_WIDTH}
         const resizedImg = await imageThumbnail(image.Body, options);
         console.log(resizedImg);
         // resize OK
@@ -53,16 +53,4 @@ lol = async function (event, context) {
     } catch (err) {
         console.error(err);
     }
-
-
 };
-
-(async () => {
-    try {
-        await lol()
-        console.log('DONE');
-    } catch (e) {
-        console.log('Ops');
-        console.log(e);
-    }
-})();
